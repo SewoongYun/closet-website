@@ -37,13 +37,31 @@ function openBook(b,n){
   select.replaceChildren(...b.pages.map((_,i)=>{const o=document.createElement('option');o.value=i+1;o.textContent=pad(i+1);return o}));
   pageTotal.textContent=b.pages.length;
   showPage(n);
-  if(!reader.open)reader.showModal();
+  if(!reader.open){
+    // 보던 위치를 기억한다. 카카오톡 등 일부 휴대폰 브라우저는 뷰어가 열린 동안 페이지를 맨 위로 올려 버린다.
+    readerScrollY=window.scrollY;
+    // 휴대폰 뒤로 가기를 누르면 사이트를 나가지 않고 뷰어만 닫히도록 기록을 하나 남긴다
+    history.pushState({reader:true},'');
+    reader.showModal();
+  }
   document.body.classList.add('reading');
 }
+let readerScrollY=0;
+history.scrollRestoration='manual';
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>openBook(MAGAZINE,Number(b.dataset.page))));
-document.querySelector('#close-reader').addEventListener('click',()=>reader.close());
-reader.addEventListener('close',()=>document.body.classList.remove('reading'));
-reader.addEventListener('click',e=>{if(e.target===reader){const r=reader.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)reader.close()}});
+// 닫기 버튼, 바깥 클릭, Esc, 휴대폰 뒤로 가기가 모두 이 함수를 거친다.
+// 브라우저의 close 이벤트는 늦게 오거나 오지 않는 경우가 있어서 정리를 여기서 바로 한다.
+function closeReader(){
+  if(reader.open)reader.close();
+  if(!document.body.classList.contains('reading'))return;
+  document.body.classList.remove('reading');
+  window.scrollTo(0,readerScrollY);
+  if(history.state&&history.state.reader)history.back();
+}
+document.querySelector('#close-reader').addEventListener('click',closeReader);
+reader.addEventListener('close',closeReader);
+window.addEventListener('popstate',closeReader);
+reader.addEventListener('click',e=>{if(e.target===reader){const r=reader.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeReader()}});
 prev.addEventListener('click',()=>showPage(page-1));next.addEventListener('click',()=>showPage(page+1));select.addEventListener('change',()=>showPage(Number(select.value)));
 zoom.addEventListener('click',()=>{const expanded=paper.classList.toggle('zoom');zoom.setAttribute('aria-pressed',String(expanded));zoom.textContent=expanded?'축소 −':'확대 ＋'});
 reader.addEventListener('keydown',e=>{if(e.target.tagName==='SELECT')return;if(e.key==='ArrowRight'){e.preventDefault();showPage(page+1)}if(e.key==='ArrowLeft'){e.preventDefault();showPage(page-1)}});
