@@ -17,5 +17,5 @@ window.CLOSET_DATA={
   // 2025 패션쇼: 사진을 assets/show2025/ 폴더에 넣고 파일 이름을 적습니다.
   // cover는 패션쇼 탭의 액자에 들어갈 단체 사진, photos는 눌렀을 때 나오는 사진들입니다.
   // 예) show2025:{cover:'group.jpg',photos:['01.jpg','02.jpg','03.jpg']}
-  show2025:{cover:'',photos:[]}
+  show2025:{cover:'group.jpg',photos:['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg','07.jpg','08.jpg','09.jpg']}
 };

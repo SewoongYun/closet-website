@@ -161,3 +161,10 @@ a.framed:hover img,.mini-card:hover .framed img{transform:scale(1.04)}
 .last-show .look-letters{padding:14px 30px 70px}
 }
 .reader-toolbar h2{min-width:0;margin:0 12px 0 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* 2025 패션쇼 컨셉 글 */
+.show-concept{max-width:720px;margin:0 0 48px;padding:28px 0 4px;border-top:1px solid #4a4541}
+.show-concept-label{display:block;font:11px Arial,sans-serif;letter-spacing:1px;color:#8f877f;margin-bottom:18px}
+.show-concept p{font-size:14px;line-height:2;margin:0 0 16px;color:#c2bbb1;word-break:keep-all}
+.show-concept .show-concept-lead{font-size:20px;line-height:1.6;color:#f4f1eb;margin-bottom:22px}
+@media(max-width:700px){.show-concept{margin-bottom:34px;padding-top:22px}.show-concept p{font-size:12.5px}.show-concept .show-concept-lead{font-size:17px}}
