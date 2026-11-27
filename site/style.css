@@ -168,3 +168,95 @@ a.framed:hover img,.mini-card:hover .framed img{transform:scale(1.04)}
 .show-concept p{font-size:14px;line-height:2;margin:0 0 16px;color:#c2bbb1;word-break:keep-all}
 .show-concept .show-concept-lead{font-size:20px;line-height:1.6;color:#f4f1eb;margin-bottom:22px}
 @media(max-width:700px){.show-concept{margin-bottom:34px;padding-top:22px}.show-concept p{font-size:12.5px}.show-concept .show-concept-lead{font-size:17px}}
+
+/* 2026 패션쇼 컨셉: CLEFT GARMENTS (학생이 구상한 화면을 따름) */
+.cleft{--cleft-ink:#cfcac3;background:linear-gradient(#0b0a0acc,#0b0a0acc),#141312 url(assets/show2026/texture.jpg) center/cover;color:var(--cleft-ink);padding-bottom:110px}
+.cleft .back-link{color:#bdb6ad;font-size:15px;font-weight:600;padding-bottom:18px;border-bottom:1px solid #6d6862;min-width:min(560px,75%)}
+.cleft-hero{position:relative;margin:40px -6.4% 0;overflow:hidden;border-block:2px solid #000}
+.cleft-hero img{display:block;width:100%;height:clamp(260px,42vw,560px);object-fit:cover;filter:grayscale(1) brightness(.8)}
+.cleft-hero-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 6%}
+.cleft-hero h2{margin:0;font:800 clamp(40px,8.6vw,132px)/1 'Noto Sans KR',Arial,sans-serif;letter-spacing:-.01em;color:#b9b6b2e6;text-shadow:0 2px 18px #0006}
+.cleft-hero span{font:700 clamp(20px,3vw,42px) 'Noto Sans KR',Arial,sans-serif;color:#b9b6b2e6;margin:10px 0 0 .3em}
+.cleft-tagline{text-align:center;font-size:clamp(15px,1.6vw,20px);font-weight:600;line-height:1.7;color:#e3dfd9;margin:56px auto 0;max-width:900px;padding-bottom:56px;border-bottom:2px solid #6d6862;word-break:keep-all}
+.cleft-concept{max-width:780px;margin:64px auto 0;text-align:center}
+.cleft-concept h3{font:700 17px 'Noto Sans KR',Arial,sans-serif;color:#e3dfd9;margin:0 0 28px;letter-spacing:.02em}
+.cleft-concept p{font-size:15px;line-height:2;margin:0 0 26px;word-break:keep-all}
+.cleft-title{font:700 clamp(30px,3.4vw,46px) 'Noto Sans KR',Arial,sans-serif;color:#e3dfd9;margin:110px -6.4% 0;padding:0 6% 18px;border-bottom:2px solid #cfcac3;width:78%}
+.cleft-looks{display:grid;gap:90px;margin-top:70px}
+.cleft-look{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;max-width:1120px;width:100%;margin:0 auto}
+.cleft-photo{position:relative;padding:0;border:6px solid #050505;background:#050505;cursor:zoom-in;z-index:1;box-shadow:0 18px 40px #0008}
+.cleft-photo::before{content:'';position:absolute;top:-22px;left:46%;width:52%;height:44px;background:#1d1c1bf0;transform:rotate(-2deg);clip-path:polygon(2% 12%,100% 0,97% 88%,0 100%);z-index:2}
+.cleft-look:nth-child(2) .cleft-photo::before{left:4%;transform:rotate(3deg)}
+.cleft-look:nth-child(3) .cleft-photo::before{left:40%;transform:rotate(-4deg)}
+.cleft-photo img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .4s}
+.cleft-photo:hover img{transform:scale(1.03)}
+.cleft-text{background:#262422e8;padding:44px 40px;margin-left:-4px;text-align:center;box-shadow:0 10px 30px #0006}
+.cleft-text h4{font:700 clamp(21px,2.1vw,28px)/1.35 'Noto Sans KR',Arial,sans-serif;color:#bdb8b1;margin:0 0 24px}
+.cleft-text p{font-size:14px;line-height:1.9;margin:0;word-break:keep-all}
+.cleft-text .cleft-summary{margin-bottom:22px;color:#e3dfd9}
+.cleft-soon{position:relative;margin:120px -6.4% 0}
+.cleft-soon img{display:block;width:100%;max-height:820px;object-fit:cover;filter:brightness(.72)}
+.cleft-soon figcaption{position:absolute;inset:0;display:grid;place-items:center;justify-content:center;padding:0;font:700 clamp(36px,5vw,64px) 'Noto Sans KR',Arial,sans-serif;color:#e8e4de;letter-spacing:.02em;text-shadow:0 2px 20px #000a}
+@media(max-width:700px){
+.cleft{padding-bottom:70px}
+.cleft .back-link{font-size:14px;min-width:75%}
+.cleft-hero{margin:28px -6.4% 0}
+.cleft-hero img{height:300px}
+.cleft-hero h2{font-size:9.4vw;white-space:nowrap}
+.cleft-hero span{font-size:20px}
+.cleft-tagline{font-size:13.5px;margin-top:40px;padding:0 2% 40px}
+.cleft-concept{margin-top:44px}
+.cleft-concept p{font-size:12.5px;line-height:1.95}
+.cleft-title{margin-top:76px;width:85%}
+.cleft-looks{gap:64px;margin-top:50px}
+.cleft-look{grid-template-columns:minmax(0,47%) minmax(0,53%)}
+.cleft-photo{border-width:4px}
+.cleft-photo::before{top:-14px;height:28px}
+.cleft-text{padding:22px 12px;margin-left:-2px}
+.cleft-text h4{font-size:15px;margin-bottom:14px}
+.cleft-text p{font-size:11px;line-height:1.75}
+.cleft-text .cleft-summary{margin-bottom:12px}
+.cleft-soon{margin-top:80px}
+.cleft-soon img{height:420px}
+}
+
+/* 패션쇼 탭: 올해(2026)를 크게, 작년(2025)은 작은 카드로 */
+.theme-link{display:inline-flex;align-items:center;gap:12px;padding:7px 16px 7px 7px;border:1px solid #6d6862;background:#33312c;transition:background .2s,color .2s,border-color .2s}
+.theme-link img{width:44px;height:58px;object-fit:cover;flex:none}
+.theme-link b{display:block;font:600 17px 'Noto Sans KR',Arial,sans-serif;white-space:nowrap;letter-spacing:.01em}
+.theme-link small{display:block;font-size:11px;color:#c8bfb2;margin-top:3px}
+.theme-link:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.theme-link:hover small{color:var(--wine)}
+.feature-2026{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);background:#33312c;color:var(--paper);overflow:hidden}
+.feature-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;background:#0c0b0a;padding:4px}
+.feature-photos img{display:block;width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .5s}
+.feature-2026:hover .feature-photos img{transform:scale(1.04)}
+.feature-text{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:44px 40px}
+.feature-text small{font:10px Arial,sans-serif;letter-spacing:2px;color:#c8bfb2}
+.feature-text b{font:800 clamp(34px,3.6vw,54px)/1.05 'Noto Sans KR',Arial,sans-serif;letter-spacing:-.01em;margin:18px 0 20px}
+.feature-text>span{font-size:13px;line-height:1.9;color:#c2bbb1;word-break:keep-all}
+.feature-text em{margin-top:28px;font:600 14px 'Noto Sans KR',sans-serif;font-style:normal;background:var(--paper);color:var(--ink);padding:14px 22px;transition:background .2s,color .2s}
+.feature-2026:hover .feature-text em{background:var(--wine);color:var(--paper)}
+.prev-show{display:grid;grid-template-columns:200px minmax(0,1fr);align-items:center;margin-top:16px;border:1px solid #4a4541;color:var(--paper);transition:background .2s}
+.prev-show:hover{background:#33312c}
+.prev-show-photo{position:relative;height:118px;background:#3a3733;overflow:hidden}
+.prev-show-photo::before{content:'2025';position:absolute;inset:0;display:grid;place-items:center;font:italic 34px Georgia,serif;color:#6c655d}
+.prev-show-photo img{position:relative;display:block;width:100%;height:100%;object-fit:cover}
+.prev-show-text{display:flex;flex-direction:column;align-items:flex-start;padding:0 26px}
+.prev-show-text small{font-size:11px;color:#a9a197}
+.prev-show-text b{font:400 21px Arial,sans-serif;margin:4px 0 6px}
+.prev-show-text em{font-style:normal;font-size:11px;color:#c8bfb2;border-bottom:1px solid #7b7368}
+@media(max-width:700px){
+.show-info{grid-template-columns:1fr 1fr;row-gap:24px}
+.show-info>div:first-child{grid-column:1/-1}
+.theme-link b{font-size:16px}
+.feature-2026{grid-template-columns:1fr}
+.feature-text{padding:28px 22px 30px}
+.feature-text b{font-size:34px;margin:14px 0 16px}
+.feature-text>span{font-size:12.5px}
+.feature-text em{margin-top:22px;font-size:13px;padding:12px 18px}
+.prev-show{grid-template-columns:118px minmax(0,1fr)}
+.prev-show-photo{height:92px}
+.prev-show-text{padding:0 16px}
+.prev-show-text b{font-size:17px}
+}

@@ -96,12 +96,15 @@ document.querySelectorAll('[data-album]').forEach(grid=>{
   const empty=document.querySelector(`[data-album-empty="${grid.dataset.album}"]`);
   if(empty)empty.hidden=album.pages.length>0;
 });
-// 패션쇼 탭 액자: 단체 사진이 있으면 글자 그림 대신 사진을 보여 준다
+// 패션쇼 탭의 작년 카드: 단체 사진이 있으면 보여 준다 (없으면 빈 칸에 2025 글자만)
 if(DATA.show2025.cover){
   const cover=document.querySelector('[data-show-cover]');
   cover.src=SHOW_DIR+DATA.show2025.cover;cover.hidden=false;
-  cover.closest('.last-show').classList.add('has-photo');
 }
+// 2026 선공개 의류: 사진을 누르면 세 벌을 뷰어로 넘겨 본다 (목록은 화면의 사진에서 읽는다)
+const lookButtons=[...document.querySelectorAll('[data-look]')];
+const LOOKS_2026={title:'CLEFT GARMENTS',sub:'VER.2026',label:'2026 선공개 의류',pages:lookButtons.map(b=>b.querySelector('img').getAttribute('src'))};
+lookButtons.forEach(b=>b.addEventListener('click',()=>openBook(LOOKS_2026,Number(b.dataset.look))));
 
 // 탭: 주소의 #값으로 보여 줄 패널을 정한다 (뒤로 가기, 링크 공유가 그대로 동작)
 // 패널에 id 대신 data-tab을 쓴다. id가 #값과 같으면 브라우저가 그 위치로 스크롤해 버린다.
